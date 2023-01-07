@@ -8,4 +8,4 @@ You can download one video by `download_youtube()` and one playlist by `download
 
 By using `download_music_playlist()`, `mp4` files are converted to `mp3`.
 
-*All three functions try to skip downloading videos when they are already downloaded but note that it sometimes fails.
+*All three functions try to skip downloading videos if they are already downloaded but note that it sometimes fails.
