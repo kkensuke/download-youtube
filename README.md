@@ -1,6 +1,6 @@
 # Download YouTube videos
 
-`download_youtube.py` includes three functions: `download_youtube()`, `download_video_playlist()`, `download_music_playlist()` using pytube library.
+`download_youtube.py` includes three functions: `download_youtube()`, `download_video_playlist()`, `download_music_playlist()` using [pytube](https://pytube.io/en/latest/).
 
 You have to specify the URL of the YouTube video or playlist you will download.
 
