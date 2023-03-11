@@ -42,7 +42,7 @@ def download_music_playlist(url, path):
             yt_title = yt.title.replace("/", "").replace(".", "").replace('"', "").replace("'", "").replace(":", "").replace("*", "").replace(",", "").replace("|", "").replace("?", "")
             if not os.path.exists(path + yt_title+ '.mp3'):
                 print(f'Downloading video: {yt.title}: {url}')
-                yt.streams.filter(only_audio=True, file_extension='mp4').order_by('abr').first().download(path)
+                yt.streams.filter(only_audio=True, file_extension='mp3').order_by('abr').first().download(path)
             else:
                 print(f'Video [{yt.title}] already downloaded, skipping.') # sometimes fails
         except:
