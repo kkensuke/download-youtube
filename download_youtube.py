@@ -12,9 +12,9 @@ def download_youtube(url, path):
             print(f'Downloading video: {yt.title}: {url}')
             yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').first().download(path)
         else:
-            print(f'Video {yt.title} already exists, skipping.') # sometimes fails
+            print(f'Already downloaded: [{yt.title}]') # sometimes fails
     except:
-        print(f'Video {yt.title} is unavaialable, skipping.')
+        print(f'Unavaialable: {url}')
     print('Downloaded: ' + yt.title)
 
 
@@ -28,9 +28,9 @@ def download_video_playlist(url, path):
                 print(f'Downloading video: {yt.title}: {url}')
                 yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').first().download(path)
             else:
-                print(f'Video [{yt.title}] already downloaded, skipping.') # sometimes fails
+                print(f'Already downloaded: [{yt.title}]') # sometimes fails
         except:
-            print(f'Video [{yt.title}] is unavaialable, skipping.')
+            print(f'Unavaialable: {url}')
     print('Playlist Downloaded: ' + playlist.title)
 
 
@@ -44,9 +44,9 @@ def download_music_playlist(url, path):
                 print(f'Downloading video: {yt.title}: {url}')
                 yt.streams.filter(only_audio=True, file_extension='mp3').order_by('abr').first().download(path)
             else:
-                print(f'Video [{yt.title}] already downloaded, skipping.') # sometimes fails
+                print(f'Already downloaded: [{yt.title}]') # sometimes fails
         except:
-            print(f'Video {url} is unavaialable, skipping.')
+            print(f'Unavaialable: {url}')
     print('Playlist Downloaded: ' + playlist.title)
 
     for file in os.listdir(path):
